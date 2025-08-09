@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "I'm Lucky Numbers",
-    "slug": "im-lucky-numbers",
+    "name": "Lucky Numbers",
+    "slug": "lucky-numbers",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,19 +16,20 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.github.andylke.im_lucky_numbers",
+      "package": "com.github.andylke.im.luckynumbers",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "versionCode": 10000
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "0d1b76a9-8357-42dd-8fad-6d169d03f26a"
+        "projectId": "bfe3408a-dccf-4e8f-9f8f-e505b040a6bf"
       }
     }
   }

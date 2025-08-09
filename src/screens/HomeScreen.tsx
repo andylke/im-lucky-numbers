@@ -33,7 +33,7 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Appbar.Header>
         <Image source={require('../../assets/icon.png')} style={styles.icon} />
-        <Appbar.Content title="I'm Lucky Numbers" />
+        <Appbar.Content title="Lucky Numbers" />
       </Appbar.Header>
 
       <Card style={styles.card}>
