@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, Image } from 'react-native';
-import {
-  Text,
-  Button,
-  RadioButton,
-  Card,
-  Appbar,
-} from 'react-native-paper';
+import React, { useState } from "react";
+import { View, StyleSheet, Image } from "react-native";
+import { Text, Button, RadioButton, Card, Appbar } from "react-native-paper";
 
 const HomeScreen = () => {
-  const [digitOption, setDigitOption] = useState<'3' | '4' | '6'>('4');
-  const [generatedNumber, setGeneratedNumber] = useState<string>('');
+  const [digitOption, setDigitOption] = useState<"3" | "4" | "6">("4");
+  const [generatedNumber, setGeneratedNumber] = useState<string>("");
 
   const getDigits = (): number => parseInt(digitOption, 10);
 
@@ -24,7 +18,7 @@ const HomeScreen = () => {
     const base = parseInt(timestamp.slice(-5), 10) * hash;
     const max = Math.pow(10, digits);
     const num = Math.abs(base) % max;
-    const result = num.toString().padStart(digits, '0');
+    const result = num.toString().padStart(digits, "0");
 
     setGeneratedNumber(result);
   };
@@ -32,7 +26,10 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Appbar.Header>
-        <Image source={require('../../assets/icon.png')} style={styles.icon} />
+        <Image
+          source={require("../../assets/favicon.png")}
+          style={styles.icon}
+        />
         <Appbar.Content title="Lucky Numbers" />
       </Appbar.Header>
 
@@ -40,7 +37,7 @@ const HomeScreen = () => {
         <Card.Content>
           <Text variant="titleMedium">Choose Digit Length</Text>
           <RadioButton.Group
-            onValueChange={(value) => setDigitOption(value as '3' | '4' | '6')}
+            onValueChange={(value) => setDigitOption(value as "3" | "4" | "6")}
             value={digitOption}
           >
             <RadioButton.Item label="3" value="3" />
@@ -55,16 +52,15 @@ const HomeScreen = () => {
           >
             I'm Feeling Lucky
           </Button>
-
-          {generatedNumber !== '' && (
-            <View style={styles.resultContainer}>
-              <Text variant="headlineLarge" style={styles.result}>
-                {generatedNumber}
-              </Text>
-            </View>
-          )}
         </Card.Content>
       </Card>
+      {generatedNumber !== "" && (
+        <Card style={styles.card}>
+          <Card.Content style={styles.resultContainer}>
+            <Text style={styles.result}>{generatedNumber}</Text>
+          </Card.Content>
+        </Card>
+      )}
     </View>
   );
 };
@@ -74,14 +70,13 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
   },
   icon: {
-    width: 28,
-    height: 28,
+    width: 32,
+    height: 32,
     marginHorizontal: 12,
-    resizeMode: 'contain',
-  },  
+    resizeMode: "contain",
+  },
   card: {
     margin: 16,
     padding: 8,
@@ -90,13 +85,11 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   resultContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 24,
-    paddingVertical: 16,
+    alignItems: "center",
+    justifyContent: "center",
   },
   result: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 32,
   },
 });
